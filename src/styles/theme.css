@@ -1,0 +1,23 @@
+*, :root {
+    
+    --background-color-primary: #F4F5F7;
+    --background-color-secondary: #FFFFFF;
+    --background-color-tertiary: #EAECF0;
+
+    --text-color-primary: #172B4D;
+    --text-color-secondary: #64748B;
+    --text-color-tertiary: #8993A4;
+
+    --button-color: #2563EB;
+    --button-color-hover: #1D4ED8;
+
+    --to-do-color: #2563EB;
+    --blocked-color: #EF4444;
+    --working-color: #F59E0B;
+    --done-color: #10B981;
+
+    --low-priority: #006644;
+    --medium-priority: #974F0C;
+    --high-priority: #BF2600;
+
+}
