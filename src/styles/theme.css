@@ -3,10 +3,12 @@
     --background-color-primary: #F4F5F7;
     --background-color-secondary: #FFFFFF;
     --background-color-tertiary: #EAECF0;
+    --background-color-quaternary: #172B4D;
 
     --text-color-primary: #172B4D;
     --text-color-secondary: #64748B;
     --text-color-tertiary: #8993A4;
+    --text-color-quaternary: #F4F5F7;
 
     --button-color: #2563EB;
     --button-color-hover: #1D4ED8;
