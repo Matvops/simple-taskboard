@@ -1,0 +1,23 @@
+.nav {
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.1);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: start;
+    gap: 2.8rem;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: var(--text-color-secondary);
+    transition-property: all;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in;
+    padding: .8rem 1.2rem;
+    border-radius: .5rem;
+
+    &:hover {
+        color: var(--text-color-quaternary);
+        background-color: var(--background-color-quaternary);
+    }
+}
