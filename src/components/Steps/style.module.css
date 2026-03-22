@@ -1,0 +1,177 @@
+.bullet {
+    font-size: x-large;
+}
+
+.toDo {
+    color: var(--to-do-color);
+}
+
+.blocked {
+    color: var(--blocked-color);
+}
+
+.working {
+    color: var(--working-color);
+}
+
+.done {
+    color: var(--done-color);
+}
+
+.steps {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+    margin: 10rem 4rem 0;
+}
+
+.step {
+    background-color: var(--background-color-tertiary);
+    padding: 1.6rem 2rem;
+    border-radius: .8rem;
+    flex: 1 1 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.4rem;
+    max-height: 60vh;
+    margin-bottom: 2rem;
+}
+
+.headerCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerCard > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.title {
+    font-size: medium;
+    text-transform: uppercase;
+    color: var(--text-color-primary);
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+
+.buttonHeader {
+    padding: 1.2rem 1.6rem;
+    border: none;
+    color: var(--text-color-primary);
+    font-weight: 500;
+    font-size: medium;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .4rem;
+    border-radius: .4rem;
+    transition-property: all;
+    transition-duration: 75ms;
+    transition-timing-function: ease;
+    cursor: pointer;
+}
+
+.buttonHeader:hover {
+    background-color: var(--background-color-quaternary);
+    color: var(--text-color-quaternary);
+}
+
+.buttonHeader svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    color: var(--text-color-primary);
+}
+
+.buttonHeader:hover svg {
+    color: var(--text-color-quaternary);
+}
+
+.numberOfTasks {
+    font-size: x-small;
+    background-color: #D0D5DE;
+    padding: .2rem .8rem;
+    border-radius: 1rem;
+}
+
+.contentCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    flex: 1;
+    overflow-y: scroll;
+    padding: .5em 0;
+}
+
+.content {
+    font-size: medium;
+    background-color: var(--background-color-primary);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 12rem;
+    max-height: 12rem;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 50ms;
+    transition-timing-function: ease-in;
+    margin: 0 2rem;
+}
+
+
+.content:hover {
+    box-shadow: 0 .4rem 1.6rem rgba(0, 0, 0, 0.2);
+    margin: 0 1.9rem;
+}
+
+.description {
+    font-size: medium;
+    font-weight: 500;
+}
+
+.priority {
+    font-size: smaller;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+.priorityLow {
+    color: var(--low-priority);
+    background: rgb(from var(--low-priority) r g b / 20%);
+    padding: .2rem .8rem;
+    border-radius: .4rem;
+}
+
+.priorityMedium {
+    color: var(--medium-priority);
+    background: rgb(from var(--medium-priority) r g b / 20%);
+    padding: .2rem .8rem;
+    border-radius: .4rem;
+}
+
+.priorityHigh {
+    color: var(--high-priority);
+    background: rgb(from var(--high-priority) r g b / 20%);
+    padding: .2rem .8rem;
+    border-radius: .4rem;
+}
+
+.contentFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.createDate {
+    font-size: small;
+    opacity: 50%;
+}
