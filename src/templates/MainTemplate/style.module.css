@@ -1,0 +1,7 @@
+.template {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 99vh;
+    margin-top: 1px;
+}
