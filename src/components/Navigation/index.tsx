@@ -1,12 +1,13 @@
 import style from './style.module.css';
+import { RouterLink } from '../../routers/RouterLink';
 
 export const Navigation = () => {
 
   return (
     <>
       <nav className={style.nav}>
-        <a href="/" className={style.link}>Quadro</a>
-        <a href="/" className={style.link}>Lista</a>
+        <RouterLink path='/' className={style.link}>Quadro</RouterLink>
+        <RouterLink path='/lista' className={style.link}>Lista</RouterLink>
       </nav>
     </>
   );
