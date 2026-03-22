@@ -2,10 +2,30 @@
 import './styles/theme.css';
 import './styles/global.css';
 import { Board } from './pages/Board';
+import { Route } from 'react-router';
+import { List } from './pages/List';
+import { MainRouter } from './routers/MainRouter';
 
 export const App = () => {
 
   return (
-    <Board />
+    <>
+      <MainRouter>
+        <Route
+          path='/'
+          element={<Board />}
+        />
+
+        <Route
+          path='/lista'
+          element={<List />}
+        />
+
+        <Route
+          path='*'
+          element={<div>Página não existe</div>}
+        />
+      </MainRouter>
+    </>
   );
 }
