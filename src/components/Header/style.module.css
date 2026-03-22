@@ -8,3 +8,7 @@
 .bullet {
     color: var(--button-color);
 }
+
+header {
+    background-color: var(--background-color-secondary);
+}
