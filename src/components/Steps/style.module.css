@@ -63,11 +63,10 @@
 
 
 .buttonHeader {
-    padding: 1.2rem 1.6rem;
+    padding: .8rem 1.2rem;
     border: none;
     color: var(--text-color-primary);
     font-weight: 500;
-    font-size: medium;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
