@@ -1,0 +1,110 @@
+.container {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.title {
+  color: var(--text-color-primary);
+}
+
+.numberTasks {
+  opacity: 60%;
+  font-size: small;
+}
+
+.table {
+  width: 100%;
+  background-color: var(--background-color-secondary);
+  border-radius: 1rem;
+  border: .1rem solid var(--background-color-tertiary);
+  box-shadow: 0 0 .2rem rgb(0, 0, 0, 0.1);
+}
+
+.tableHeader {
+  background-color: var(--background-color-tertiary);
+  border-radius: .8rem;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  opacity: 80%;
+}
+
+.header {
+  padding: .8rem 1.2rem;
+  text-align: start;
+  font-size: small;
+}
+
+table, th, td {
+  border: none; 
+  border-collapse: collapse;
+}
+
+.tableData {
+  padding: 1.6rem 1.2rem;
+  border-top: .1rem solid rgb(0, 0, 0, 0.1);
+  font-weight: 500;
+  font-size: small;
+}
+
+.tableRow {
+  transition-property: all;
+  transition-duration: 50ms;
+  transition-timing-function: ease;
+}
+
+  
+.tableRow:hover {
+  background-color: var(--background-color-primary);
+}
+
+.date {
+  opacity: 40%;
+}
+
+.toDo, .blocked, .working, .done, .lowPriority, .mediumPriority, .highPriority {
+  padding: .2rem .8rem;
+  border-radius: 1.2rem;
+  font-weight: 600;
+}
+
+.toDo {
+  color: var(--to-do-color);
+  background: rgb(from var(--to-do-color) r g b / 10%);
+}
+
+.blocked {
+  color: var(--blocked-color);
+  background: rgb(from var(--blocked-color) r g b / 10%);
+}
+
+.working {
+  color: var(--working-color);
+  background: rgb(from var(--working-color) r g b / 10%);
+}
+
+.done {
+  color: var(--done-color);
+  background: rgb(from var(--done-color) r g b / 10%);
+}
+
+.lowPriority {
+  color: var(--low-priority);
+  background-color: rgb(from var(--low-priority) r g b / 10%);
+}
+
+.mediumPriority {
+  color: var(--medium-priority);
+  background-color: rgb(from var(--medium-priority) r g b / 10%);
+}
+
+.highPriority {
+  color: var(--high-priority);
+  background-color: rgb(from var(--high-priority) r g b / 10%);
+}
