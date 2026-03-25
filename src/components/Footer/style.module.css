@@ -1,12 +1,21 @@
 .footer {
     text-align: center;
-    margin-bottom: .4rem;
+    background-color: var(--background-color-secondary);
+    padding: 1.6rem;
+    box-shadow: 0 .2rem .4rem rgba(0, 0, 0, .2);
 }
 
 .text {
-    font-size: small;
+    font-size: medium;
+    color: var(--text-color-tertiary);
 }
 
 .text a {
-    color: blue;
+    color: var(--to-do-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.text a:hover {
+    text-decoration: underline;
 }
