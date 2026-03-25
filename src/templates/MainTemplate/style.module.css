@@ -2,6 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 99vh;
+    min-height: 99.9vh;
     margin-top: 1px;
 }
