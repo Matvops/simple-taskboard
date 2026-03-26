@@ -7,7 +7,7 @@ export const Footer = () => {
     <>
       <footer className={style.footer}>
         <p className={style.text}>Criado por
-          <RouterLink path='#'>Matvops</RouterLink>
+          <RouterLink path='/autor'>Matvops</RouterLink>
         </p>
       </footer>
     </>
