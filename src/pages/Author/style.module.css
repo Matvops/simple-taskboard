@@ -1,0 +1,100 @@
+.section {
+    width: 50%;
+    margin: auto;
+    background-color: var(--background-color-secondary);
+    border-radius: .8rem;
+    box-shadow: 0 0 .4rem rgba(0, 0, 0, 0.1);
+    padding: 1rem 14rem;
+}
+
+.header {
+    text-align: center;
+}
+
+.headerTitle {
+    font-size: xx-large;
+}
+
+.authorTitle {
+    font-size: small;
+    padding-top: .4rem;
+    opacity: 50%;
+}
+
+.image {
+    background-color: var(--to-do-color);
+    width: fit-content;
+    margin: 2rem auto;
+    text-align: center;
+    font-size: clamp(2rem, 12vw, 4.8rem);
+    color: var(--text-color-quaternary);
+    font-weight: 500;
+    border-radius: 50%;
+    padding: 3rem 2.8rem;
+}
+
+.contacts {
+    margin: 3rem auto 0;
+    padding: 4rem 0;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contentTitle {
+    font-size: large;
+}
+
+.contentSubtitle {
+    font-size: small;
+    opacity: 60%;
+    padding-top: .4rem;
+}
+
+.card {
+    border: .1rem solid rgba(0, 0, 0, .2);
+    border-radius: .8rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 75ms ease-in;
+}
+
+.card:hover {
+    border: .1rem solid rgb(from var(--to-do-color) r g b / 90%);
+    background-color: rgb(from var(--to-do-color) r g b / 10%);
+    padding: 2rem 1.8rem;
+    box-shadow: 0 .2rem .4rem rgba(0, 0, 0, .2);
+}
+
+.card:hover .arrow {
+    color: var(--to-do-color);
+}
+
+.arrow {
+    font-size: large;
+}
+                
+.headerCard {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.githubImage, .linkedinImage {
+    align-self: center;
+    margin: 0 1rem;
+}
+
+.imageCard {
+    width: clamp(2rem, 12vw, 3.8rem);
+    height: clamp(2rem, 12vh, 3.8rem);
+}
+
+a {
+    text-decoration: none !important;
+    color: black;
+}
