@@ -7,11 +7,13 @@ import { List } from './pages/List';
 import { MainRouter } from './routers/MainRouter';
 import { Author } from './pages/Author';
 import { NotFound } from './pages/NotFound';
+import { TaskContextProvider } from './contexts/TasksContext/TaskContextProvider';
 
 export const App = () => {
 
   return (
-    <>
+    <TaskContextProvider>
+      
       <MainRouter>
         <Route
           path='/'
@@ -33,6 +35,6 @@ export const App = () => {
           element={<NotFound />}
         />
       </MainRouter>
-    </>
+    </TaskContextProvider>
   );
 }
