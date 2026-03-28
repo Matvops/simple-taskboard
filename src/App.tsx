@@ -6,6 +6,7 @@ import { Route } from 'react-router';
 import { List } from './pages/List';
 import { MainRouter } from './routers/MainRouter';
 import { Author } from './pages/Author';
+import { NotFound } from './pages/NotFound';
 
 export const App = () => {
 
@@ -29,7 +30,7 @@ export const App = () => {
 
         <Route
           path='*'
-          element={<div>Página não existe</div>}
+          element={<NotFound />}
         />
       </MainRouter>
     </>
