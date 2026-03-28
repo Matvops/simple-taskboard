@@ -3,7 +3,7 @@ import { Link } from "react-router"
 
 type RouterLinkType = {
   path: string,
-  children: string
+  children: string | React.ReactNode
 } & React.ComponentProps<'a'>
 
 export const RouterLink = ({ path, children, ...props}: RouterLinkType) => {
