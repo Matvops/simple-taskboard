@@ -6,7 +6,7 @@ import { ModalCreateTask } from '../ModalCreateTask';
 
 export const Steps = () => {
 
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const { state } = useContext(TaskContext);
 
   console.log(state);
