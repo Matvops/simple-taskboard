@@ -1,7 +1,15 @@
 import { PlusIcon } from 'lucide-react';
 import style from './style.module.css';
+import { useContext, useState } from 'react';
+import { TaskContext } from '../../contexts/TasksContext';
+import { ModalCreateTask } from '../ModalCreateTask';
 
 export const Steps = () => {
+
+  const [visible, setVisible] = useState(true);
+  const { state } = useContext(TaskContext);
+
+  console.log(state);
 
 
   return (
@@ -15,7 +23,7 @@ export const Steps = () => {
               <span className={style.numberOfTasks}>2</span>
             </div>
 
-            <button className={style.buttonHeader}>
+            <button className={style.buttonHeader} onClick={() => setVisible(true)}>
               <PlusIcon /> Adicionar
             </button>
           </div>
@@ -37,7 +45,7 @@ export const Steps = () => {
               <h2 className={style.title}><span className={`${style.blocked} ${style.bullet}`}>&bull;</span> Bloqueado</h2>
               <span className={style.numberOfTasks}>2</span>
             </div>
-            <button className={style.buttonHeader}>
+            <button className={style.buttonHeader} onClick={() => setVisible(true)}>
               <PlusIcon /> Adicionar
             </button>
           </div>
@@ -59,7 +67,7 @@ export const Steps = () => {
               <h2 className={style.title}><span className={`${style.working} ${style.bullet}`}>&bull;</span> Fazendo</h2>
               <span className={style.numberOfTasks}>2</span>
             </div>
-            <button className={style.buttonHeader}>
+            <button className={style.buttonHeader} onClick={() => setVisible(true)}>
               <PlusIcon /> Adicionar
             </button>
           </div>
@@ -82,7 +90,7 @@ export const Steps = () => {
               <h2 className={style.title}><span className={`${style.done} ${style.bullet}`}>&bull;</span> Concluído</h2>
               <span className={style.numberOfTasks}>2</span>
             </div>
-            <button className={style.buttonHeader}>
+            <button className={style.buttonHeader} onClick={() => setVisible(true)}>
               <PlusIcon /> Adicionar
             </button>
           </div>
@@ -126,6 +134,11 @@ export const Steps = () => {
 
         </div>
       </div>
+
+      <ModalCreateTask
+        visible={visible}
+        setVisible={setVisible}
+      />
     </>
   );
 }
