@@ -1,6 +1,12 @@
 import type { TasksType } from "../../types/TasksTypes";
-import type { TaskType } from "../../types/TaskType";
 
 export const initialState: TasksType = {
-   tasks: new Array<TaskType>()
+   tasks: [
+    {
+        name: 'Teste 11111111',
+        priority: 'lowPriority',
+        stage: 'toDo',
+        createdAt: null
+    }
+   ]
 }
