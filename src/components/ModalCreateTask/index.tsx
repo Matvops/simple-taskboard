@@ -1,13 +1,61 @@
+import { useContext, useState } from 'react';
 import style from './style.module.css';
+import type { TaskType } from '../../types/TaskType';
+import { TaskContext } from '../../contexts/TasksContext';
 
 
 type ModalCreateTask = {
   visible: boolean,
-  setVisible: React.Dispatch<React.SetStateAction<boolean>>
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>,
+  type: TaskType['stage']
 };
 
+type OptionsType = {
+  value: TaskType['priority'],
+  label: string
+};
 
-export const ModalCreateTask = ({ visible, setVisible }: ModalCreateTask) => {
+export const ModalCreateTask = ({ visible, setVisible, type }: ModalCreateTask) => {
+
+  const [title, setTitle] = useState<string>('')
+  const [priority, setPriority] = useState<TaskType['priority']>('lowPriority');
+
+  const { setState } = useContext(TaskContext);
+
+  const options: OptionsType[] = [
+    {value: 'lowPriority', label: 'Baixa'},
+    {value: 'mediumPriority', label: 'Média'},
+    {value: 'highPriority', label: 'Alta'}
+  ];
+
+  const returnOptions = () => {
+
+    return options.map(option => {
+      return (
+        <>
+          <option value={option.value} onClick={() => setPriority(option.value)}>{option.label}</option>
+        </>
+      );
+    });
+  }
+
+  function handleCreateTask() {
+
+    const task: TaskType = {
+      name: title,
+      priority: priority,
+      stage: type,
+      createdAt: new Date().getTime()
+    };
+
+    setState(prevState => {
+      return {
+        tasks: [...prevState.tasks, task]
+      }
+    });
+
+    setVisible(false);
+  }
 
   return (
     <>
@@ -18,22 +66,26 @@ export const ModalCreateTask = ({ visible, setVisible }: ModalCreateTask) => {
 
             <div>
               <label className={style.label}>Título
-                <input type="text" className={style.input} placeholder='Digite...' />
+                <input 
+                  value={title}
+                  onChange={e => setTitle(e.target.value)}
+                  type="text" 
+                  className={style.input} 
+                  placeholder='Digite...' 
+                />
               </label>
             </div>
 
             <div className={style.selectContainer}>
               <label className={style.label}>Prioridade</label>
               <select className={style.select}>
-                <option>Baixa</option>
-                <option>Média</option>
-                <option>Alta</option>
+                {returnOptions()}
               </select>
             </div>
 
             <div className={style.buttons}>
               <button className={`${style.button}`} onClick={() => setVisible(false)}>Cancelar</button>
-              <button className={`${style.button}`}>Salvar Tarefa</button>
+              <button className={`${style.button}`} onClick={handleCreateTask}>Salvar Tarefa</button>
             </div>
           </div>
         </div>
