@@ -6,7 +6,7 @@ export const initialState: TasksType = {
         name: 'Teste 11111111',
         priority: 'lowPriority',
         stage: 'toDo',
-        createdAt: null
+        createdAt: 0
     }
    ]
 }
