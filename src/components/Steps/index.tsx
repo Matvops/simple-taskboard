@@ -68,10 +68,12 @@ export const Steps = () => {
           </div>
 
           <div className={style.contentCard}>
+
+            {returnTasks('toDo')}
             <div className={style.content} draggable>
               <span className={style.description}>Criar wireframes da interface principal</span>
               <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.priorityLow}`}>&bull; Baixa</p>
+                <p className={`${style.priority} ${style.lowPriority}`}>&bull; Baixa</p>
                 <span className={style.createDate}>02/02/2022</span>
               </div>
             </div>
@@ -90,10 +92,11 @@ export const Steps = () => {
           </div>
 
           <div className={style.contentCard}>
+            {returnTasks('blocked')}
             <div className={style.content} draggable>
               <span className={style.description}>Criar wireframes da interface principal</span>
               <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.priorityMedium}`}>&bull; Média</p>
+                <p className={`${style.priority} ${style.mediumPriority}`}>&bull; Média</p>
                 <span className={style.createDate}>02/02/2022</span>
               </div>
             </div>
@@ -112,13 +115,7 @@ export const Steps = () => {
           </div>
 
           <div className={style.contentCard}>
-            <div className={style.content} draggable>
-              <span className={style.description}>Criar wireframes da interface principal</span>
-              <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.priorityHigh}`}>&bull; Alta</p>
-                <span className={style.createDate}>02/02/2022</span>
-              </div>
-            </div>
+            {returnTasks('working')}
           </div>
         </div>
 
@@ -136,39 +133,15 @@ export const Steps = () => {
 
           <div className={style.contentCard}>
 
-            <div className={style.content} draggable>
-              <span className={style.description}>Criar wireframes da interface principal</span>
-              <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.priorityHigh}`}>&bull; Alta</p>
-                <span className={style.createDate}>02/02/2022</span>
-              </div>
-            </div>
+            {returnTasks('done')}
 
             <div className={style.content} draggable>
               <span className={style.description}>Criar wireframes da interface principal</span>
               <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.priorityHigh}`}>&bull; Alta</p>
+                <p className={`${style.priority} ${style.highPriority}`}>&bull; Alta</p>
                 <span className={style.createDate}>02/02/2022</span>
               </div>
             </div>
-
-            <div className={style.content} draggable>
-              <span className={style.description}>Criar wireframes da interface principal</span>
-              <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.priorityHigh}`}>&bull; Alta</p>
-                <span className={style.createDate}>02/02/2022</span>
-              </div>
-            </div>
-
-            <div className={style.content} draggable>
-              <span className={style.description}>Criar wireframes da interface principaaaaaaaaaaal</span>
-              <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.priorityHigh}`}>&bull; Alta</p>
-                <span className={style.createDate}>02/02/2022</span>
-              </div>
-            </div>
-
-            
           </div>
 
         </div>
