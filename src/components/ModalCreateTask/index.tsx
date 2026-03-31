@@ -45,7 +45,7 @@ export const ModalCreateTask = ({ visible, setVisible, type }: ModalCreateTask) 
       name: title,
       priority: priority,
       stage: type,
-      createdAt: new Date().getTime()
+      createdAt: Date.now()
     };
 
     setState(prevState => {
