@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import { TaskContext } from '../../contexts/TasksContext';
 import { ModalCreateTask } from '../ModalCreateTask';
 import type { TaskType } from '../../types/TaskType';
+import { Utils } from '../../utils/Utils';
 
 export const Steps = () => {
 
@@ -27,10 +28,6 @@ export const Steps = () => {
     return state.tasks?.map((task, key) => {
 
       if(task.stage === type) {
-        const date = new Date(task.createdAt);
-
-        const formattedDate = date.getDate() + '/' + String(date.getMonth()).padStart(2, '0') + '/' + date.getFullYear();
-
 
         return (
           <>
@@ -38,7 +35,7 @@ export const Steps = () => {
               <span className={style.description}>{task.name}</span>
               <div className={style.contentFooter}>
                 <p className={`${style.priority} ${style[task.priority]}`}>&bull; {prioritys[task.priority]}</p>
-                <span className={style.createDate}>{formattedDate}</span>
+                <span className={style.createDate}>{Utils.numberToDate(task.createdAt)}</span>
               </div>
             </div>
           </>
