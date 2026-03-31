@@ -22,6 +22,32 @@ export const Steps = () => {
     setVisible(true)
   }
 
+  const returnTasks = (type: TaskType['stage']) => {
+
+    return state.tasks?.map((task, key) => {
+
+      if(task.stage === type) {
+        const date = new Date(task.createdAt);
+
+        const formattedDate = date.getDate() + '/' + String(date.getMonth()).padStart(2, '0') + '/' + date.getFullYear();
+
+
+        return (
+          <>
+            <div className={style.content} key={key} draggable>
+              <span className={style.description}>{task.name}</span>
+              <div className={style.contentFooter}>
+                <p className={`${style.priority} ${style[task.priority]}`}>&bull; {prioritys[task.priority]}</p>
+                <span className={style.createDate}>{formattedDate}</span>
+              </div>
+            </div>
+          </>
+        )
+      };
+
+    });
+  }
+
   useEffect(() => {
     console.log(state);
   }, [state]);
