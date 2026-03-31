@@ -144,21 +144,21 @@
     display: inline-flex;
 }
 
-.priorityLow {
+.lowPriority {
     color: var(--low-priority);
     background: rgb(from var(--low-priority) r g b / 20%);
     padding: .2rem .8rem;
     border-radius: .4rem;
 }
 
-.priorityMedium {
+.mediumPriority {
     color: var(--medium-priority);
     background: rgb(from var(--medium-priority) r g b / 20%);
     padding: .2rem .8rem;
     border-radius: .4rem;
 }
 
-.priorityHigh {
+.highPriority {
     color: var(--high-priority);
     background: rgb(from var(--high-priority) r g b / 20%);
     padding: .2rem .8rem;
