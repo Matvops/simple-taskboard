@@ -11,6 +11,12 @@ export const Steps = () => {
   const [type, setType] = useState<TaskType['stage']>('toDo');
   const { state } = useContext(TaskContext);
 
+  const prioritys = {
+    lowPriority: 'Baixa',
+    mediumPriority: 'Média',
+    highPriority: 'Alta',
+  }
+
   function openModal(type: TaskType['stage']) {
     setType(type);
     setVisible(true)
