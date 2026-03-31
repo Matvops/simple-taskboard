@@ -54,6 +54,8 @@ export const ModalCreateTask = ({ visible, setVisible, type }: ModalCreateTask) 
       }
     });
 
+    setTitle('');
+    setPriority('lowPriority');
     setVisible(false);
   }
 
