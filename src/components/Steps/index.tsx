@@ -1,6 +1,6 @@
 import { PlusIcon } from 'lucide-react';
 import style from './style.module.css';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { TaskContext } from '../../contexts/TasksContext';
 import { ModalCreateTask } from '../ModalCreateTask';
 import type { TaskType } from '../../types/TaskType';
@@ -45,9 +45,6 @@ export const Steps = () => {
     });
   }
 
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
   return (
     <>
       <div className={style.steps}>
