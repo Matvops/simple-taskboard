@@ -62,15 +62,7 @@ export const Steps = () => {
           </div>
 
           <div className={style.contentCard}>
-
             {returnTasks('toDo')}
-            <div className={style.content} draggable>
-              <span className={style.description}>Criar wireframes da interface principal</span>
-              <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.lowPriority}`}>&bull; Baixa</p>
-                <span className={style.createDate}>02/02/2022</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -87,13 +79,6 @@ export const Steps = () => {
 
           <div className={style.contentCard}>
             {returnTasks('blocked')}
-            <div className={style.content} draggable>
-              <span className={style.description}>Criar wireframes da interface principal</span>
-              <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.mediumPriority}`}>&bull; Média</p>
-                <span className={style.createDate}>02/02/2022</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -126,16 +111,7 @@ export const Steps = () => {
           </div>
 
           <div className={style.contentCard}>
-
             {returnTasks('done')}
-
-            <div className={style.content} draggable>
-              <span className={style.description}>Criar wireframes da interface principal</span>
-              <div className={style.contentFooter}>
-                <p className={`${style.priority} ${style.highPriority}`}>&bull; Alta</p>
-                <span className={style.createDate}>02/02/2022</span>
-              </div>
-            </div>
           </div>
 
         </div>
