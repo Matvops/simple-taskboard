@@ -49,7 +49,7 @@ export const Table = () => {
       <div className={style.container}>
         <div className={style.headerContainer}>
           <h2 className={style.title}>Todas as tarefas</h2>
-          <span className={style.numberTasks}>{state.tasks?.length} tarefas</span>
+          <span className={style.numberTasks}>{state.length} tarefas</span>
         </div>
 
         <table className={style.table}>
