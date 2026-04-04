@@ -23,7 +23,9 @@ export const Table = () => {
 
   const returnTasks = () => {
 
-    return state.tasks?.map((task, key) => {
+    const allTasks = [...state.tasks.toDo, ...state.tasks.blocked, ...state.tasks.working, ...state.tasks.done];
+
+    return allTasks?.map((task, key) => {
 
       return (
         <>
