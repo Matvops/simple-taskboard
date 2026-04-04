@@ -2,12 +2,13 @@ import { useContext, useState } from 'react';
 import style from './style.module.css';
 import type { TaskType } from '../../types/TaskType';
 import { TaskContext } from '../../contexts/TasksContext';
+import type { TasksType } from '../../types/TasksTypes';
 
 
 type ModalCreateTask = {
   visible: boolean,
   setVisible: React.Dispatch<React.SetStateAction<boolean>>,
-  type: TaskType['stage']
+  type: keyof TasksType['tasks']
 };
 
 type OptionsType = {
@@ -50,7 +51,11 @@ export const ModalCreateTask = ({ visible, setVisible, type }: ModalCreateTask) 
 
     setState(prevState => {
       return {
-        tasks: [...prevState.tasks, task]
+        tasks: {
+          ...prevState.tasks,
+          [`${type}`]: [...prevState.tasks[type], task]
+        },
+        length: prevState.length + 1
       }
     });
 
