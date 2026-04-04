@@ -11,16 +11,20 @@ type TaskContextProviderType = {
 export const TaskContextProvider = ({ children }: TaskContextProviderType) => {
 
   const [state, setState] = useState<TasksType>(() => {
+    const tasksStorage = sessionStorage.getItem('tasks');
+    
+    let retorno: TasksType = initialState; 
+    
+    if(tasksStorage) {
 
-    const tasksSessionStorage = sessionStorage.getItem('tasks');
+      const tasks = JSON.parse(tasksStorage);
 
-    let retorno: TasksType = initialState;
-
-    if(tasksSessionStorage) {
       retorno = {
-        tasks: JSON.parse(tasksSessionStorage)
+        tasks: tasks,
+        length: tasks.blocked.length + tasks.done.length + tasks.toDo.length + tasks.working.length
       }
-    } 
+
+    }
 
     return retorno;
   });
@@ -32,6 +36,7 @@ export const TaskContextProvider = ({ children }: TaskContextProviderType) => {
 
   useEffect(() => {
     sessionStorage.setItem('tasks', JSON.stringify(state.tasks));
+    console.log(state)
   }, [state]);
 
   return(

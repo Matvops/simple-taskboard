@@ -3,13 +3,13 @@ import style from './style.module.css';
 import { useContext, useState } from 'react';
 import { TaskContext } from '../../contexts/TasksContext';
 import { ModalCreateTask } from '../ModalCreateTask';
-import type { TaskType } from '../../types/TaskType';
 import { Utils } from '../../utils/Utils';
+import type { TasksType } from '../../types/TasksTypes';
 
 export const Steps = () => {
 
   const [visible, setVisible] = useState(false);
-  const [type, setType] = useState<TaskType['stage']>('toDo');
+  const [type, setType] = useState<keyof TasksType['tasks']>('toDo');
   const { state } = useContext(TaskContext);
 
   const prioritys = {
@@ -18,14 +18,14 @@ export const Steps = () => {
     highPriority: 'Alta',
   }
 
-  function openModal(type: TaskType['stage']) {
+  function openModal(type: keyof TasksType['tasks']) {
     setType(type);
     setVisible(true)
   }
 
-  const returnTasks = (type: TaskType['stage']) => {
+  const returnTasks = (type: keyof TasksType['tasks']) => {
 
-    return state.tasks?.map((task, key) => {
+    return state.tasks[type]?.map((task, key) => {
 
       if(task.stage === type) {
 
