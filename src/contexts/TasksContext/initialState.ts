@@ -1,5 +1,11 @@
 import type { TasksType } from "../../types/TasksTypes";
 
 export const initialState: TasksType = {
-   tasks: []
+   tasks: {
+      toDo: [],
+      blocked: [],
+      working: [],
+      done: [],
+   },
+   length: 0
 }
