@@ -21,7 +21,7 @@ export const ModalCreateTask = ({ visible, setVisible, type }: ModalCreateTask) 
   const [title, setTitle] = useState<string>('')
   const [priority, setPriority] = useState<TaskType['priority']>('lowPriority');
 
-  const { setState } = useContext(TaskContext);
+  const { state, setState } = useContext(TaskContext);
 
   const options: OptionsType[] = [
     {value: 'lowPriority', label: 'Baixa'},
