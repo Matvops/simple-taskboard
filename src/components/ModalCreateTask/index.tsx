@@ -43,6 +43,7 @@ export const ModalCreateTask = ({ visible, setVisible, type }: ModalCreateTask) 
   function handleCreateTask() {
 
     const task: TaskType = {
+      id: state.tasks[type].length,
       name: title,
       priority: priority,
       stage: type,
@@ -53,7 +54,7 @@ export const ModalCreateTask = ({ visible, setVisible, type }: ModalCreateTask) 
       return {
         tasks: {
           ...prevState.tasks,
-          [`${type}`]: [...prevState.tasks[type], task]
+          [type]: [...prevState.tasks[type], task]
         },
         length: prevState.length + 1
       }
