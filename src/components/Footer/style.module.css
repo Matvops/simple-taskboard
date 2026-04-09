@@ -3,6 +3,7 @@
     background-color: var(--background-color-secondary);
     padding: 1.6rem;
     box-shadow: 0 .2rem .4rem rgba(0, 0, 0, .2);
+    margin-top: auto;
 }
 
 .text {
