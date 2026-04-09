@@ -146,7 +146,7 @@ export const Steps = () => {
             <div className={style.headerCard}>
               <div>
                 <h2 className={style.title}><span className={`${style.toDo} ${style.bullet}`}>&bull;</span> A Fazer</h2>
-                <span className={style.numberOfTasks}>2</span>
+                <span className={style.numberOfTasks}>{state.tasks['toDo'].length}</span>
               </div>
 
               <button className={style.buttonHeader} onClick={() => openModal('toDo')}>
@@ -168,7 +168,7 @@ export const Steps = () => {
             <div className={style.headerCard}>
               <div>
                 <h2 className={style.title}><span className={`${style.blocked} ${style.bullet}`}>&bull;</span> Bloqueado</h2>
-                <span className={style.numberOfTasks}>2</span>
+                <span className={style.numberOfTasks}>{state.tasks['blocked'].length}</span>
               </div>
               <button className={style.buttonHeader} onClick={() => openModal('blocked')}>
                 <PlusIcon /> Adicionar
@@ -189,7 +189,7 @@ export const Steps = () => {
             <div className={style.headerCard}>
               <div>
                 <h2 className={style.title}><span className={`${style.working} ${style.bullet}`}>&bull;</span> Fazendo</h2>
-                <span className={style.numberOfTasks}>2</span>
+                <span className={style.numberOfTasks}>{state.tasks['working'].length}</span>
               </div>
               <button className={style.buttonHeader} onClick={() => openModal('working')}>
                 <PlusIcon /> Adicionar
@@ -211,7 +211,7 @@ export const Steps = () => {
             <div className={style.headerCard}>
               <div>
                 <h2 className={style.title}><span className={`${style.done} ${style.bullet}`}>&bull;</span> Concluído</h2>
-                <span className={style.numberOfTasks}>2</span>
+                <span className={style.numberOfTasks}>{state.tasks['done'].length}</span>
               </div>
               <button className={style.buttonHeader} onClick={() => openModal('done')}>
                 <PlusIcon /> Adicionar
