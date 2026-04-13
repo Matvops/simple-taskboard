@@ -4,14 +4,14 @@ import { useContext, useState } from 'react';
 import { TaskContext } from '../../contexts/TasksContext';
 import { ModalCreateTask } from '../ModalCreateTask';
 import { Utils } from '../../utils/Utils';
-import type { TasksType } from '../../types/TasksTypes';
 import { DragDropContext, Draggable, Droppable, type DropResult } from '@hello-pangea/dnd';
-import type { TaskType } from '../../types/TaskType';
+import type { Stage } from '../../types/Stage';
+import type { Task } from '../../interfaces/Task';
 
 export const Steps = () => {
 
   const [visible, setVisible] = useState(false);
-  const [type, setType] = useState<keyof TasksType['tasks']>('toDo');
+  const [type, setType] = useState<Stage>('toDo');
   const { state, setState } = useContext(TaskContext);
 
   const prioritys = {
@@ -20,12 +20,12 @@ export const Steps = () => {
     highPriority: 'Alta',
   }
 
-  function openModal(type: keyof TasksType['tasks']) {
+  function openModal(type: Stage) {
     setType(type);
     setVisible(true)
   }
 
-  const returnTasks = (type: keyof TasksType['tasks']) => {
+  const returnTasks = (type: Stage) => {
 
     return state.tasks[type]?.map((task, key) => {
 
@@ -79,11 +79,11 @@ export const Steps = () => {
     }
   }
 
-  function getTask(droppableId: keyof TasksType['tasks'], id: number): TaskType {
+  function getTask(droppableId: Stage, id: number): Task {
     return state.tasks[droppableId].filter(task => task.id == id)[0];
   }
 
-  function removeTask(source: TaskType) {
+  function removeTask(source: Task) {
 
     setState(prevState => {
       return {
@@ -96,7 +96,7 @@ export const Steps = () => {
     })
   }
   
-  function decrementId(source: TaskType, task: TaskType): TaskType
+  function decrementId(source: Task, task: Task): Task
   {
 
     if(task.id > source.id) {
@@ -106,7 +106,7 @@ export const Steps = () => {
     return task;
   }
 
-  function addTask(task: TaskType, stage: keyof TasksType['tasks']) {
+  function addTask(task: Task, stage: Stage) {
      setState(prevState => {
         return {
           ...prevState,
@@ -118,7 +118,7 @@ export const Steps = () => {
       })
   }
   
-  function ordenaArray(newTask: TaskType, ...tasks: TaskType[]): TaskType[] 
+  function ordenaArray(newTask: Task, ...tasks: Task[]): Task[] 
   {
 
     tasks = tasks.map((task) => {
