@@ -1,0 +1,1 @@
+export type Priority = 'lowPriority' | 'mediumPriority' | 'highPriority';
