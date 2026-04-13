@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TaskContext } from ".";
 import type { TasksType } from "../../types/TasksTypes";
 import { initialState } from "./initialState";
+import type { Task } from "../../interfaces/Task";
 
 
 type TaskContextProviderType = {
@@ -19,9 +20,24 @@ export const TaskContextProvider = ({ children }: TaskContextProviderType) => {
 
       const tasks = JSON.parse(tasksStorage);
 
+      const dateLimit = new Date();
+      dateLimit.setDate(dateLimit.getDate() - 3);
+
+      const doneFiltered = tasks.done?.filter((task: Task) => task.createdAt > dateLimit.getMilliseconds());
+      const toDo = tasks.toDo;
+      const blocked = tasks.blocked;
+      const working = tasks.working;
+
+      const tasksFiltered = {
+        toDo: toDo,
+        blocked: blocked,
+        working: working,
+        done: doneFiltered,
+      }
+
       retorno = {
-        tasks: tasks,
-        length: tasks.blocked.length + tasks.done.length + tasks.toDo.length + tasks.working.length
+        tasks: tasksFiltered,
+        length: toDo.length + blocked.length + working.length + doneFiltered.length
       }
 
     }
