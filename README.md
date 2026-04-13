@@ -1,75 +1,95 @@
-# React + TypeScript + Vite
+# Simple Taskboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-19.2.4-61dafb?style=for-the-badge&logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
+[![Vite](https://img.shields.io/badge/Vite-8.0.0-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev)
 
-Currently, two official plugins are available:
+## Um kanban de aprendizagem feito com React + TypeScript
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ **Simple Taskboard** é um projeto pessoal desenvolvido para estudo e portfolio. Ele é um Kanban interativo que combina boa usabilidade com um código simples, moderno e fácil de evoluir.
 
-## React Compiler
+<picture>
+  <img alt="Captura de tela do Simple Taskboard" src="./public/Screenshot.png">
+</picture>
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Por que este projeto?
 
-Note: This will impact Vite dev & build performances.
+Este app nasceu como um exercício prático para consolidar o conhecimento em:
 
-## Expanding the ESLint configuration
+- React moderno com componentes funcionais
+- TypeScript tipado e seguro
+- gerenciamento de estado com Context API
+- navegação com React Router
+- experiência de usuário com drag-and-drop
+- persistência leve via `sessionStorage`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Ele também é uma aplicação ideal para o meu portfólio, pois tem interface acessível e fácil de estender.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades principais
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 🎯 Quadro Kanban com colunas: **A Fazer**, **Bloqueado**, **Fazendo** e **Concluído**
+- 🧲 Suporte a drag-and-drop com `@hello-pangea/dnd`
+- ➕ Criação de tarefas por coluna com modal
+- 📊 Visualização opcional em tabela com todas as tarefas
+- 🔁 Persistência de dados na sessão do navegador (não é backend)
+- 🌐 Rotas simples para separar views e melhorar a navegação
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Rotas disponíveis
+
+- `/` — Quadro Kanban
+- `/lista` — Tabela de tarefas
+- `/autor` — Página do autor com links de contato
+
+## Stack usada
+
+- React 19
+- TypeScript 5
+- Vite
+- React Router 7
+- @hello-pangea/dnd
+- lucide-react
+- ESLint
+
+## Como executar localmente
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Abra o endereço exibido pelo Vite no navegador e comece a usar o app.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Estrutura do projeto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `src/App.tsx` — configura o contexto e roteamento
+- `src/contexts/TasksContext/TaskContextProvider.tsx` — estado global e sincronização com sessionStorage
+- `src/components/Steps` — lógica do quadro Kanban e drag-and-drop
+- `src/components/Table` — visualização de tarefas em tabela
+- `src/components/ModalCreateTask` — interface de criação de tarefas
+- `src/routers/MainRouter.tsx` — container de rotas
+- `src/templates/MainTemplate` — layout com header e footer
+- `src/pages/Board` / `src/pages/List` / `src/pages/Author` — views principais
+
+## Pontos de diferenciação
+
+- Design focado em usabilidade e clareza
+- Uso de contexto para gerenciar estado entre páginas
+- Conversão de timestamps para datas legíveis com utilitário próprio
+- Tarefas concluídas filtradas por prazo para manter o histórico recente
+
+## Próximos passos
+
+Este projeto pode evoluir com:
+
+- edição e exclusão de tarefas
+- filtros por prioridade e data
+
+## Sobre o autor
+
+Criado por **Matvops / Matheus Cadenassi** como parte do portfólio de front-end.
+
+Visite o perfil no GitHub e no LinkedIn pela página `/autor`.
+
+---
+
+> Um projeto de estudo para colocar em prática React, TypeScript e UX de gerenciamento de tarefas.
