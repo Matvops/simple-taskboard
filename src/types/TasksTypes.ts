@@ -1,11 +1,7 @@
-import type { TaskType } from "./TaskType";
+import type { Task } from "../interfaces/Task";
+import type { Stage } from "./Stage";
 
 export type TasksType = {
-    tasks: {
-        toDo: TaskType[],
-        blocked: TaskType[],
-        working: TaskType[],
-        done: TaskType[],
-    },
+    tasks: Record<Stage, Task[]>,
     length: number
 }
