@@ -3,6 +3,7 @@ import style from './style.module.css';
 import type { TaskType } from '../../types/TaskType';
 import { TaskContext } from '../../contexts/TasksContext';
 import type { TasksType } from '../../types/TasksTypes';
+import type { Priority } from '../../types/Priority';
 
 
 type ModalCreateTask = {
@@ -19,7 +20,7 @@ type OptionsType = {
 export const ModalCreateTask = ({ visible, setVisible, type }: ModalCreateTask) => {
 
   const [title, setTitle] = useState<string>('')
-  const [priority, setPriority] = useState<TaskType['priority']>('lowPriority');
+  const [priority, setPriority] = useState<Priority>('lowPriority');
 
   const { state, setState } = useContext(TaskContext);
 
