@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
 import { RouterLink } from '../../routers/RouterLink';
 import { MainTemplate } from '../../templates/MainTemplate';
 import style from './style.module.css';
 
 
 export const NotFound = () => {
+
+  useEffect(() => {
+    document.title = '404 - Not Found';
+  }, [])
 
   return (
     <MainTemplate>

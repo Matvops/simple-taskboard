@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import { MainTemplate } from '../../templates/MainTemplate';
 import style from './style.module.css';
 
 export const Author = () => {
+
+  useEffect(() => {
+    document.title = 'Contacts';
+  }, [])
 
   return (
     <>
@@ -36,7 +41,7 @@ export const Author = () => {
 
             <a target='_blank' href="https://www.linkedin.com/in/matheus-cadenassi-799125321/">
               <div className={`${style.linkedin} ${style.card}`}>
-              
+
                 <div className={style.headerCard}>
                   <div className={style.linkedinImage}>
                     <img className={style.imageCard} src="/linkedin.svg" alt="image github" />
