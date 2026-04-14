@@ -4,6 +4,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
 [![Vite](https://img.shields.io/badge/Vite-8.0.0-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev)
 
+[🌐 Ver versão em produção](https://simple-taskboard.vercel.app/)
+
 ## Um kanban de aprendizagem feito com React + TypeScript
 
  **Simple Taskboard** é um projeto pessoal desenvolvido para estudo e portfolio. Ele é um Kanban interativo que combina boa usabilidade com um código simples, moderno e fácil de evoluir.
